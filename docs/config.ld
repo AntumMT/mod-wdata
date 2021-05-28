@@ -1,5 +1,5 @@
-project = "wconfig"
-title = "World Config"
+project = "wdata"
+title = "World Data Manager"
 format = "markdown"
 not_luadoc = true
 boilerplate = false

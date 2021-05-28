@@ -1,5 +1,5 @@
 
---- wconfig API
+--- World Data Manager API
 --
 --  @module api.lua
 
@@ -29,16 +29,16 @@ end
 
 --- Reads config file from world directory.
 --
---  @function wconfig.read
+--  @function wdata.read
 --  @tparam string fname Base filename with optional directory structure (e.g. "my_mod/my_config")
 --  @treturn table Table with contents read from json file or `nil`.
-function wconfig.read(fname)
+function wdata.read(fname)
 	local fpath = world_path .. "/" .. fname .. ".json"
 
 	-- check if file exists
 	local fopen = io.open(fpath, "r")
 	if not fopen then
-		wconfig.log("error", "file not found: " .. fpath)
+		wdata.log("error", "file not found: " .. fpath)
 		return
 	end
 
@@ -46,7 +46,7 @@ function wconfig.read(fname)
 	io.close(fopen)
 
 	if not table_data then
-		wconfig.log("error", "cannot read json data from file: " .. fpath)
+		wdata.log("error", "cannot read json data from file: " .. fpath)
 		return
 	end
 
@@ -56,17 +56,17 @@ end
 
 --- Writes to config file in world directory.
 --
---  @function wconfig.write
+--  @function wdata.write
 --  @tparam string fname Base filename with optional directory structure (e.g. "my_mod/my_config").
 --  @tparam table data Table data to be written to config file.
 --  @tparam[opt] bool styled Outputs in a human-readable format if this is set (default: `true`).
 --  @treturn bool `true` if succeeded, `false` if not.
-function wconfig.write(fname, data, styled)
+function wdata.write(fname, data, styled)
 	styled = styled ~= false
 
 	local json_data = core.write_json(data, styled)
 	if not json_data then
-		wconfig.log("error", "cannot convert data to json format")
+		wdata.log("error", "cannot convert data to json format")
 		return false
 	end
 
@@ -76,7 +76,7 @@ function wconfig.write(fname, data, styled)
 	local dirname = get_dir(fpath)
 	if dirname ~= world_path then
 		if not core.mkdir(dirname) then
-			wconfig.log("error", "cannot create directory: " .. dirname)
+			wdata.log("error", "cannot create directory: " .. dirname)
 			return false
 		end
 	end
@@ -89,16 +89,16 @@ end
 --
 --  @section aliases
 
---- Alias of `wconfig.read`.
+--- Alias of `wdata.read`.
 --
 --  @falias minetest.read_world_config
 if not core.read_world_config then
-	core.read_world_config = wconfig.read
+	core.read_world_config = wdata.read
 end
 
---- Alias of `wconfig.write`.
+--- Alias of `wdata.write`.
 --
 --  @falias minetest.write_world_config
 if not core.write_world_config then
-	core.write_world_config = wconfig.write
+	core.write_world_config = wdata.write
 end

@@ -1,15 +1,15 @@
 
-wconfig = {}
-wconfig.modname = core.get_current_modname()
-wconfig.modpath = core.get_modpath(wconfig.modname)
+wdata = {}
+wdata.modname = core.get_current_modname()
+wdata.modpath = core.get_modpath(wdata.modname)
 
-function wconfig.log(lvl, msg)
+function wdata.log(lvl, msg)
 	if not msg then
 		msg = lvl
 		lvl = nil
 	end
 
-	msg = "[" .. wconfig.modname .. "] " .. msg
+	msg = "[" .. wdata.modname .. "] " .. msg
 	if not lvl then
 		core.log(msg)
 	else
@@ -18,4 +18,4 @@ function wconfig.log(lvl, msg)
 end
 
 
-dofile(wconfig.modpath .. "/api.lua")
+dofile(wdata.modpath .. "/api.lua")
