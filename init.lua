@@ -16,3 +16,6 @@ function wconfig.log(lvl, msg)
 		core.log(lvl, msg)
 	end
 end
+
+
+dofile(wconfig.modpath .. "/api.lua")
