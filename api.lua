@@ -59,7 +59,7 @@ end
 --  @function wconfig.write
 --  @tparam string fname Base filename with optional directory structure (e.g. "my_mod/my_config").
 --  @tparam table data Table data to be written to config file.
---  @tparam bool styled Outputs in a human-readable format if this is set (default: `true`).
+--  @tparam[opt] bool styled Outputs in a human-readable format if this is set (default: `true`).
 --  @treturn bool `true` if succeeded, `false` if not.
 function wconfig.write(fname, data, styled)
 	styled = styled ~= false
