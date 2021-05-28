@@ -38,7 +38,7 @@ function wdata.read(fname)
 	-- check if file exists
 	local fopen = io.open(fpath, "r")
 	if not fopen then
-		wdata.log("error", "file not found: " .. fpath)
+		wdata.log("warning", "file not found: " .. fpath)
 		return
 	end
 
