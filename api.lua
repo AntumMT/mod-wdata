@@ -1,11 +1,16 @@
 
+--- wconfig API
+--
+--  @module api.lua
+
+
 -- store formatted world path
 local world_path = core.get_worldpath():gsub("\\", "/")
 
 --- Retrieves directory path where file is located.
 --
 --  @local
---  @get_dir
+--  @function get_dir
 --  @tparam string fpath Full path to file.
 --  @treturn string Full path to directory.
 local function get_dir(fpath)
@@ -80,10 +85,20 @@ function wconfig.write(fname, data, styled)
 end
 
 
--- aliases
+--- Aliases
+--
+--  @section aliases
+
+--- Alias of `wconfig.read`.
+--
+--  @falias minetest.read_world_config
 if not core.read_world_config then
 	core.read_world_config = wconfig.read
 end
+
+--- Alias of `wconfig.write`.
+--
+--  @falias minetest.write_world_config
 if not core.write_world_config then
 	core.write_world_config = wconfig.write
 end
