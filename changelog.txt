@@ -1,3 +1,6 @@
 
-v0.1
+v1.0
 ----
+- initial release
+- added method for reading json data from world directory
+- added method for writing json data to world directory
