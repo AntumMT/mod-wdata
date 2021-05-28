@@ -3,7 +3,7 @@ wconfig = {}
 wconfig.modname = core.get_current_modname()
 wconfig.modpath = core.get_modpath(wconfig.modname)
 
-wconfig.log(lvl, msg)
+function wconfig.log(lvl, msg)
 	if not msg then
 		msg = lvl
 		lvl = nil
