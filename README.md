@@ -8,9 +8,12 @@ It takes a little work to read from & write to data in the world directory. `wda
 
 This mod is essentially an alternative to Minetest's built-in [StorageRef][] & was created before I realized the implementation existed. Some may still find wdata useful as it does allow for customizing sub-directories & filenames.
 
+<img src="screenshot.png" alt="icon" width="100px" />
+
 ### Licensing:
 
-- [MIT](LICENSE.txt)
+- Code: [MIT](LICENSE.txt)
+- Icon: [CC0](https://openclipart.org/detail/270878)
 
 ### Usage:
 
