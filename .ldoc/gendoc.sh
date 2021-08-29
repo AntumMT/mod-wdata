@@ -8,6 +8,7 @@ f_config="${d_ldoc}/config.ld"
 cd "${d_root}"
 
 # Clean old files
-rm -rf "${d_docs}/api.html" "${d_docs}/scripts" "${d_docs}/modules" "${d_docs}/source"
+rm -rf "${d_docs}/reference"
+
 # Create new files
-ldoc -c "${f_config}" -d "${d_docs}" -o "api" "${d_root}"
+ldoc -c "${f_config}" -d "${d_docs}/reference" "${d_root}"

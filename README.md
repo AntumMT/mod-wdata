@@ -42,7 +42,7 @@ Optional depends: none
 - [![ContentDB](https://content.minetest.net/packages/AntumDeluge/wdata/shields/title/)](https://content.minetest.net/packages/AntumDeluge/wdata/)
 - [Forum](https://forum.minetest.net/viewtopic.php?t=26804)
 - [Git repo](https://github.com/AntumMT/mod-wdata)
-- [API](https://antummt.github.io/mod-wdata/docs/api.html)
+- [Reference](https://antummt.github.io/mod-wdata/docs/reference/)
 - [Changelog](changelog.txt)
 - [TODO](TODO.txt)
 
