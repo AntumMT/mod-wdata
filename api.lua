@@ -30,7 +30,7 @@ end
 --- Reads config file from world directory.
 --
 --  @function wdata.read
---  @tparam string fname Base filename with optional directory structure (e.g. "my_mod/my_config")
+--  @tparam string fname Base filename with optional directory structure (e.g. "my\_mod/my\_config")
 --  @treturn table Table with contents read from json file or `nil`.
 function wdata.read(fname)
 	local fpath = world_path .. "/" .. fname .. ".json"
@@ -64,7 +64,7 @@ end
 --- Writes to config file in world directory.
 --
 --  @function wdata.write
---  @tparam string fname Base filename with optional directory structure (e.g. "my_mod/my_config").
+--  @tparam string fname Base filename with optional directory structure (e.g. "my\_mod/my\_config").
 --  @tparam table data Table data to be written to config file.
 --  @tparam[opt] FlagsDef flags
 --  @treturn bool `true` if succeeded, `false` if not.
