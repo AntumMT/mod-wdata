@@ -54,17 +54,33 @@ function wdata.read(fname)
 end
 
 
+--- Flags definition.
+--
+--  @table FlagsDef
+--  @tfield[opt] bool styled Outputs in a human-readable format if this is set (default: `true`).
+
+
 --- Writes to config file in world directory.
 --
 --  @function wdata.write
 --  @tparam string fname Base filename with optional directory structure (e.g. "my_mod/my_config").
 --  @tparam table data Table data to be written to config file.
---  @tparam[opt] bool styled Outputs in a human-readable format if this is set (default: `true`).
+--  @tparam[opt] FlagsDef flags
 --  @treturn bool `true` if succeeded, `false` if not.
-function wdata.write(fname, data, styled)
-	styled = styled ~= false
+function wdata.write(fname, data, flags)
+	-- backward compat
+	if type(flags) == "boolean" then
+		wdata.log("warning", "wdata.write: \"styled\" parameter deprecated, use \"flags\"")
+		flags = {styled=flags}
+	end
 
-	local json_data = core.write_json(data, styled)
+	if type(flags) ~= "table" then
+		flags = {}
+	end
+
+	flags.styled = flags.styled ~= false
+
+	local json_data = core.write_json(data, flags.styled)
 	if not json_data then
 		wdata.log("error", "cannot convert data to json format")
 		return false
