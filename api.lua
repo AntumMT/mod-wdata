@@ -1,7 +1,7 @@
 
 --- World Data Manager API
 --
---  @module api.lua
+--  @topic api
 
 
 -- store formatted world path
