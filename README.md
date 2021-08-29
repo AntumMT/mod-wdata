@@ -27,7 +27,9 @@ There are two methods:
   - converts table to json data & writes to file in world directory.
   - fname:  File basename without suffix (e.g. "my_config" or "my_mod/my_config").
   - data:   Table containing data to be exported.
-  - styled: Outputs in a human-readable format if this is set (default: true).
+  - flags: Table of modifying flags.
+    - styled: Outputs in a human-readable format if this is set (default: true).
+    - null_to_table: "null" values will be converted to tables in output (default: `false`).
 ```
 
 ### Requirements:
