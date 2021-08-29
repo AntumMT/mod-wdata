@@ -1,5 +1,5 @@
 
-next
+v1.2
 ----
 - changed wdata.write method to take table parameter "flags" instead of boolean "styled"
 - added flag option "null_to_table" for wdata.write that converts null values to tables
