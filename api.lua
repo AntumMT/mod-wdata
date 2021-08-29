@@ -58,6 +58,7 @@ end
 --
 --  @table FlagsDef
 --  @tfield[opt] bool styled Outputs in a human-readable format if this is set (default: `true`).
+--  @tfield[opt] bool null_to_table "null" values will be converted to tables in output (default: `false`).
 
 
 --- Writes to config file in world directory.
@@ -94,6 +95,14 @@ function wdata.write(fname, data, flags)
 		if not core.mkdir(dirname) then
 			wdata.log("error", "cannot create directory: " .. dirname)
 			return false
+		end
+	end
+
+	if flags.null_to_table then
+		if flags.styled then
+			json_data = json_data:gsub(": null([,\n])", ": {}%1")
+		else
+			json_data = json_data:gsub(":null([,%]}])", ":{}%1")
 		end
 	end
 
