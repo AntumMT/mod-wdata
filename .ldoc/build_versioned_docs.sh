@@ -67,7 +67,9 @@ for vinfo in $(git tag -l --sort=-v:refname | grep "^v[0-9]"); do
 
 	# show version info
 	for html in $(find "${d_temp}" -type f -name "*.html"); do
-		sed -i -e "s|^<h1>World Data Manager</h1>$|<h1>World Data Manager <span style=\"font-size:12pt;\">(${vinfo})</span></h1>|" "${html}"
+		for repl in "World Data Manager" "wdata"; do
+			sed -i -e "s,^<h1>${repl}</h1>$,<h1>World Data Manager <span style=\"font-size:12pt;\">(${vinfo})</span></h1>," "${html}"
+		done
 	done
 
 	# copy screenshot
