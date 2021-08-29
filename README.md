@@ -23,6 +23,7 @@ There are two methods:
 - wdata.read(fname)
   - reads json data from file in world directory & converts to a table.
   - fname:  File basename without suffix (e.g. "my_config" or "my_mod/my_config").
+
 - wdata.write(fname, data[, styled])
   - converts table to json data & writes to file in world directory.
   - fname:  File basename without suffix (e.g. "my_config" or "my_mod/my_config").
