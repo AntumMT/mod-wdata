@@ -108,22 +108,3 @@ function wdata.write(fname, data, flags)
 
 	return core.safe_file_write(fpath, json_data)
 end
-
-
---- Aliases
---
---  @section aliases
-
---- Alias of `wdata.read`.
---
---  @falias minetest.read_world_config
-if not core.read_world_config then
-	core.read_world_config = wdata.read
-end
-
---- Alias of `wdata.write`.
---
---  @falias minetest.write_world_config
-if not core.write_world_config then
-	core.write_world_config = wdata.write
-end
