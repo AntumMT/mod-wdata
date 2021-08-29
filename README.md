@@ -24,7 +24,7 @@ There are two methods:
   - reads json data from file in world directory & converts to a table.
   - fname:  File basename without suffix (e.g. "my_config" or "my_mod/my_config").
 
-- wdata.write(fname, data[, styled])
+- wdata.write(fname, data[, flags])
   - converts table to json data & writes to file in world directory.
   - fname:  File basename without suffix (e.g. "my_config" or "my_mod/my_config").
   - data:   Table containing data to be exported.
